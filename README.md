@@ -113,8 +113,4 @@ After running the program, the following files will be generated:
 
 ---
 
-## 👥 Authors
 
-* Ooi Chong Ming
-* Yeoh Zi Qing Bryan
-* Sim Sau Yang
