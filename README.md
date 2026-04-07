@@ -1,41 +1,43 @@
-**🏢 Apartment Sorting System (Data Structures Project)**
+# 🏢 Apartment Rent Sorting System
 
-**📌 Overview**
+This project is a **C++ program** that reads apartment data from a CSV file and sorts it using different sorting algorithms.
 
-This project implements and analyzes multiple sorting algorithms to determine the most efficient method for sorting large-scale property data.
+It focuses on comparing the performance of:
 
-The dataset used contains 10,000+ apartment listings from Kuala Lumpur and Selangor, including attributes such as monthly rent, size, location, and more.
+* Quick Sort
+* Heap Sort
 
-The system is developed in C++ and focuses on:
-  Data processing from CSV files
-  Implementing sorting algorithms
-  Performance comparison through experiments
-  
-**🎯 Objectives**
+---
 
-Implement multiple sorting algorithms:
-  Merge Sort
-  Quick Sort
-  Heap Sort
-  Selection Sort
-  Insertion Sort
-Compare their time and space complexity
-Evaluate performance on a real-world dataset
-Identify the most efficient algorithm for large datasets
+## 📂 Project Description
 
-**🧠 Key Features**
+The system processes a dataset containing apartment listings in **Kuala Lumpur & Selangor** and sorts them based on:
 
-**📂 Data Processing**
+* Monthly Rent
+* Apartment Size
 
-Reads and parses CSV dataset (mudah-apartment-kl-selangor.csv)
-Handles:
-  Missing values
-  Inconsistent formats (e.g. "RM 1200 per month")
-  String-to-integer conversion
-Stores data using a custom struct Apartment
+The program also measures the **execution time** of each sorting algorithm for comparison.
 
-**🏗️ Data Structure**
+---
 
+## ⚙️ Features
+
+* Read and clean CSV dataset
+* Handle missing and inconsistent data
+* Sort data using:
+
+  * Quick Sort
+  * Heap Sort
+* Output sorted results into new CSV files
+* Measure sorting performance (time taken)
+
+---
+
+## 🧱 Data Structure
+
+Each apartment is stored using a struct:
+
+```cpp
 struct Apartment {
     string ads_id;
     string prop_name;
@@ -49,84 +51,70 @@ struct Apartment {
     int size;
     string furnished;
 };
+```
 
-**⚙️ Algorithms Implemented**
+The program stores up to **19,991 records**.
 
-**🔹 Quick Sort**
+---
 
-Average Time: O(n log n)
-Worst Time: O(n²)
-Space: O(log n)
-Fastest in this project
+## 📊 Sorting Algorithms Used
 
-**🔹 Heap Sort**
+### 1. Quick Sort
 
-Time: O(n log n) (all cases)
-Space: O(1)
-More stable performance but slower in practice
+* Average time complexity: O(n log n)
+* Fast in practice
+* Uses divide-and-conquer approach
 
-**🔹 Merge Sort**
+### 2. Heap Sort
 
-Time: O(n log n)
-Space: O(n)
-Stable but uses extra memory
+* Time complexity: O(n log n)
+* Consistent performance
+* Uses binary heap structure
 
-**🔹 Selection Sort**
+---
 
-Time: O(n²)
-Space: O(1)
-Inefficient for large datasets
+## 📁 Output Files
 
-**🔹 Insertion Sort**
+After running the program, the following files will be generated:
 
-Best: O(n)
-Average/Worst: O(n²)
-Suitable for small or nearly sorted data
+* `HeapSort(monthly_rent)-Mudah-Apartment-KL-Selangor.csv`
+* `HeapSort(Size)-Mudah-Apartment-KL-Selangor.csv`
+* `QuickSort(Monthly_Rent)-Mudah-Apartment-KL-Selangor.csv`
+* `QuickSort(Size)-Mudah-Apartment-KL-Selangor.csv`
 
-**📊 Performance Results**
+---
 
-| Algorithm   | Rent (ms) | Size (ms) |
-|------------|----------:|----------:|
-| Quick Sort | **196**   | 230.8     |
-| Heap Sort  | 399.6     | 408.2     |
+## 🚀 How to Run
 
-**🔍 Observations**
+1. Make sure you have a C++ compiler (e.g. g++)
+2. Place the dataset file in the same folder:
 
-Quick Sort is significantly faster than Heap Sort
-Best performance: Quick Sort (Monthly Rent)
-Heap Sort is more consistent but slower
+   ```
+   mudah-apartment-kl-selangor.csv
+   ```
+3. Compile the program:
 
-**🧪 How It Works**
+   ```bash
+   g++ RentSystem.cpp -o RentSystem
+   ```
+4. Run the program:
 
-Read dataset line-by-line
-Parse and clean each field
-Store data into array of Apartment
-Duplicate dataset to preserve original data
-Apply sorting algorithm:
-Sort by monthly_rent or size
-Measure execution time
-Export sorted results to CSV files
+   ```bash
+   ./RentSystem
+   ```
 
-**📁 Output**
+---
 
-The program generates sorted CSV files:
-  QuickSort(Monthly_Rent).csv
-  HeapSort(Monthly_Rent).csv
-  QuickSort(Size).csv
-  HeapSort(Size).csv
-  
-**🚀 How to Run**
+## 📝 Notes
 
-Requirements
-C++ compiler (e.g. g++)
-Dataset file in the same directory
-Compile
-g++ main.cpp -o sorter
-Run
-./sorter
+* Missing values are handled by replacing with default values (e.g., 0 or "N/A")
+* Strings like `"RM"` and `"per month"` are cleaned before processing
+* Sorting is done on copies of the dataset to preserve original data
 
-**📌 Conclusion**
+---
 
-Quick Sort is the best-performing algorithm for this dataset
-Heap Sort provides consistent performance but with higher overhead
-Simpler algorithms (Selection, Insertion) are not suitable for large datasets
+## 👥 Authors
+
+* Ooi Chong Ming
+* Yeoh Zi Qing Bryan
+* Sim Sau Yang
