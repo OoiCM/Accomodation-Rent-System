@@ -23,9 +23,9 @@ Compare their time and space complexity
 Evaluate performance on a real-world dataset
 Identify the most efficient algorithm for large datasets
 
-**🧠 Key Features
+**🧠 Key Features**
 
-📂 Data Processing**
+**📂 Data Processing**
 
 Reads and parses CSV dataset (mudah-apartment-kl-selangor.csv)
 Handles:
